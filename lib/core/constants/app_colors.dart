@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'package:smart_home/core/constants/constants.dart';
-
 class AppColors{
   const AppColors._();
 

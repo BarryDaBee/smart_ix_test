@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/dashboard/presentation/pages/pages.dart';
+import 'package:smart_home/features/home/domain/entities/entities.dart';
+import 'package:smart_home/features/home/presentation/pages/pages.dart';
 
 class AppRouter {
   const AppRouter._();
 
-  static const initialRoute = DashboardPage.routeName;
+  static const initialRoute = HomePage.routeName;
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case DashboardPage.routeName:
-        return _route(const DashboardPage());
+      case HomePage.routeName:
+        return _route(const HomePage());
       case DeviceDetailsPage.routeName:
-        return _route(const DeviceDetailsPage());
+        final device = settings.arguments! as DeviceEntity;
+        return _route(
+          DeviceDetailsPage(
+            device: device,
+          ),
+        );
       default:
         return _route(const Scaffold());
     }
