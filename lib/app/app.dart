@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/app/locator.dart';
 import 'package:smart_home/core/constants/constants.dart';
 import 'package:smart_home/core/router/app_router.dart';
-import 'package:smart_home/features/home/domain/use_cases/add_device_use_case.dart';
-import 'package:smart_home/features/home/domain/use_cases/add_routine_use_case.dart';
-import 'package:smart_home/features/home/domain/use_cases/get_devices_use_case.dart';
-import 'package:smart_home/features/home/domain/use_cases/get_routines_use_case.dart';
-import 'package:smart_home/features/home/domain/use_cases/toggle_device_use_case.dart';
-import 'package:smart_home/features/home/domain/use_cases/update_routine_use_case.dart';
-import 'package:smart_home/features/home/presentation/blocs/device_bloc/device_bloc.dart';
-import 'package:smart_home/features/home/presentation/blocs/routine_bloc/routine_bloc.dart';
-import 'package:smart_home/locator.dart';
+import 'package:smart_home/features/home/domain/use_cases/use_cases.dart';
 
-void main() async {
-  await setupLocator();
-  runApp(const SmartHome());
-}
-
-class SmartHome extends StatelessWidget {
-  const SmartHome({super.key});
+class App extends StatelessWidget {
+  const App({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +37,10 @@ class SmartHome extends StatelessWidget {
             ),
           ],
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter.onGenerateRoute,
             initialRoute: AppRouter.initialRoute,
+            title: title,
             theme: ThemeData.light().copyWith(
               progressIndicatorTheme: const ProgressIndicatorThemeData(
                 color: AppColors.orange,

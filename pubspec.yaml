@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.3 <3.0.0"
+  sdk: ">=2.17.5 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -43,6 +43,7 @@ dependencies:
 
   get_it: ^7.2.0
 
+  logger: ^1.1.0
   mocktail: ^0.3.0
   very_good_analysis: ^3.0.1
 
@@ -53,10 +54,32 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_flavorizr: ^2.1.4
   flutter_lints: ^2.0.0
 
   flutter_test:
     sdk: flutter
+
+flavorizr:
+  flavors:
+    dev:
+      app:
+        name: "Smart Home Dev"
+
+      android:
+        applicationId: "com.test.smartix.dev"
+
+      ios:
+        bundleId: "com.test.smartix.dev"
+
+    prod:
+      app:
+        name: "Smart Home Prod"
+
+      android:
+        applicationId: "com.test.smartix"
+      ios:
+        bundleId: "com.test.smartix"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

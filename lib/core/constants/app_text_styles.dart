@@ -74,13 +74,4 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: _primaryFontColor,
   );
-
-
-///TODO: Delete
-//   static TextStyle buttonStyle = TextStyle(
-//     fontFamily: _fontFamily,
-//     fontSize: 16.fontSize,
-//     fontWeight: FontWeight.w500,
-//     color: AppColors.kcPrimaryTextColor,
-//   );
 }

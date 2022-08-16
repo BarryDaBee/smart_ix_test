@@ -10,11 +10,13 @@ class DeviceRepositoryImpl implements DeviceRepository {
   final DeviceDataSource dataSource;
 
   @override
-  Future<Either<Failure, List<DeviceEntity>>> addDevice(DeviceEntity device) async {
+  Future<Either<Failure, List<DeviceEntity>>> addDevice(
+    DeviceEntity device,
+  ) async {
     try {
       final result = await dataSource.addDevice(device);
       return Right(result);
-    }on AppException catch (e) {
+    } on AppException catch (e) {
       return Future.value(Left(DeviceFailure(message: e.message)));
     }
   }
@@ -26,7 +28,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
     try {
       final result = await dataSource.toggleDevice(device);
       return Right(result);
-    }on AppException catch (e) {
+    } on AppException catch (e) {
       return Future.value(Left(DeviceFailure(message: e.message)));
     }
   }
@@ -36,7 +38,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
     try {
       final result = await dataSource.getAllDevices();
       return Right(result);
-    }on AppException catch (e) {
+    } on AppException catch (e) {
       return Future.value(Left(DeviceFailure(message: e.message)));
     }
   }

@@ -1,15 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:smart_home/core/constants/app_assets_path.dart';
 import 'package:smart_home/core/error/app_exception.dart';
 import 'package:smart_home/core/error/failure.dart';
 import 'package:smart_home/core/utils/helper_functions.dart';
-import 'package:smart_home/features/home/data/datasources/device_data_source.dart';
 import 'package:smart_home/features/home/data/datasources/routine_data_source.dart';
-import 'package:smart_home/features/home/data/repositories/device_repository_impl.dart';
 import 'package:smart_home/features/home/data/repositories/routine_repository_impl.dart';
-import 'package:smart_home/features/home/domain/entities/device_entity.dart';
 import 'package:smart_home/features/home/domain/entities/routine_entity.dart';
 
 class RoutineDataSourceMock extends Mock implements RoutineDataSource {}
@@ -21,7 +17,7 @@ void main() {
   final routineEntity = RoutineEntity(
     startTime: DateTime.now(),
     id: HelperFunctions.getRandomString(8),
-    weekdays: [],
+    weekdays: const[],
     tag: '',
     stopTime: DateTime.now(),
     image: '',

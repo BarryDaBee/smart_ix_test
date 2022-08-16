@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   void initState() {
-    context.read<DeviceBloc>().add(FetchDevices());
+    context.read<DeviceBloc>().add(const FetchDevices());
     super.initState();
   }
 
