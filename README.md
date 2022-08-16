@@ -1,8 +1,13 @@
-# Smart_home
+# Smart_home 
 
 SmartIX interview task
 
-A mobile smart hub application
+A mobile smart hub application:iphone::house:
+
+https://user-images.githubusercontent.com/65355860/184901865-73bd29d3-1659-4d2c-83c4-9a83813b50e8.mov
+
+
+
 
 ## Getting Started :rocket:
 
@@ -26,7 +31,7 @@ OR
 ```
 flutter run --flavor production --target lib/app/flavors/main_prod.dart
 ```
-# Folder Structure
+# Folder Structure :open_file_folder:
 This application uses a feature driven folder structure to seperate related functionality into individual features
 
 ```
@@ -60,4 +65,6 @@ To run all tests, paste and run the following command in the terminal
 ```
 flutter test
 ```
+
+
 
