@@ -5,7 +5,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:smart_home/core/error/failure.dart';
 import 'package:smart_home/core/utils/helper_functions.dart';
 import 'package:smart_home/features/home/domain/entities/routine_entity.dart';
-import 'package:smart_home/features/home/domain/use_cases/get_routines_use_case.dart';
 import 'package:smart_home/features/home/domain/use_cases/use_cases.dart';
 
 class AddRoutineUseCaseMock extends Mock implements AddRoutineUseCase {}

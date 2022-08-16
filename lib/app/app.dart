@@ -7,7 +7,8 @@ import 'package:smart_home/core/router/app_router.dart';
 import 'package:smart_home/features/home/domain/use_cases/use_cases.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,7 @@ class App extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter.onGenerateRoute,
             initialRoute: AppRouter.initialRoute,
+            title: title,
             theme: ThemeData.light().copyWith(
               progressIndicatorTheme: const ProgressIndicatorThemeData(
                 color: AppColors.orange,
