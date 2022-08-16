@@ -29,7 +29,7 @@ OR
 
 ### Production
 ```
-flutter run --flavor production --target lib/app/flavors/main_prod.dart
+flutter run --flavor prod --target lib/app/flavors/main_prod.dart
 ```
 # Folder Structure :open_file_folder:
 This application uses a feature driven folder structure to seperate related functionality into individual features
